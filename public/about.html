@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/homepage.css">
+    <link rel="stylesheet" href="../styles/about.css">
+    <script src="../src/auth.js"></script>
+    <script src="../src/data-fetch.js"></script>
+    <script src="../src/about.js"></script>
+</head>
+<body onload="bodyLoad()">
+    <div class="heading">
+        <h1><span class="bi bi-currency-rupee"></span>Personal Finance Manager</h1>
+        <div class="logout">
+            <div id="username"></div>
+            <button class="logout-btn" onclick="logout()">logout &nbsp;<span class="bi bi-power"></span></button>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a class="active" href="dashboard.html"><span class="bi bi-window"> </span>Dashboard</a></li>
+            <li><a href="homepage.html"><span class="bi bi-ui-checks"> </span>Expenses</a></li>
+            <li><a href="about.html"><span class="bi bi-person"> </span>About</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <div class="top-section" style="display: none;">
+        <div class="box">
+            <h2>Budget</h2>
+            <div id="budget">₹ 0.00</div>
+        </div>
+        <div class="box">
+            <h2>Groceries</h2>
+            <div id="groceries">₹ 0.00</div>
+        </div>
+        <div class="box">
+            <h2>Entertainment</h2>
+            <div id="entertainment">₹ 0.00</div>
+        </div>
+        <div class="box">
+            <h2>Utilities</h2>
+            <div id="utilities">₹ 0.00</div>
+        </div>
+        <div class="box">
+            <h2>Others</h2>
+            <div id="others">₹ 0.00</div>
+        </div>
+    </div>
+    <hr>
+    <!-- Common Section Ends here-->
+    <div class="user-card">
+        <h2>User Details</h2>
+            <div class="temp-card">
+                <div class="card-body">
+                    <img src="../src/z-user-logo.webp" alt="user_logo">
+                    <hr>
+                    <h3 id="user-username">User Name</h3>
+                    <p><strong>Email:</strong> <span id="user-email">user@email.com</span></p>
+                    <p><strong>Available Budget:</strong> ₹ <span id="user-budget"></span></p>
+                </div>
+            </div>
+        <div class="btns">
+            <button class="credit-btn" onclick="creditAmount()">Credit Amount</button>        
+            <button class="credit-btn" onclick="debitAmount()">Debit Amount</button>        
+        </div>
+    </div>   
+</body>
+</html>
